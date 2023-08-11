@@ -1,4 +1,4 @@
-import React from "react";
+import Rea;
 import MessageHistory from "./components/MessageHistory";
 
 const App: React.FC = () => {

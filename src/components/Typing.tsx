@@ -2,7 +2,7 @@ import React from "react";
 import Data from "../intrefaces/Data";
 
 
-const Typing: React.FC<Data> = ({ from, message }) {
+const Typing: React.FC<Data> = ({ from, message }) => {
     return (<li>
         <div className="message-data">
           <span className="message-data-name">
@@ -12,8 +12,7 @@ const Typing: React.FC<Data> = ({ from, message }) {
           <span className="message-data-time">{message.time}</span>
         </div>
         <div className="message my-message">{message.text}</div>
-      </li>
-    )   
+      </li>)   
 }
 
 export default Typing;
