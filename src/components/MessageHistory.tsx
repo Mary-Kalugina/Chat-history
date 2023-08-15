@@ -2,24 +2,18 @@ import React from "react";
 import MessageComponent from "./Message";
 import Typing from "./Typing";
 import Responce from "./Response";
-
-interface Message {
-    id: string,
-    from: { name: string },
-    type: 'response' | 'message' | 'typing',
-    time: string,
-    text?: string
-}
+import MessageType from "../intrefaces/MessageType";
+import '../App.css';
 
 interface MessageList {
-    list: Message[];
+    list: MessageType[];
   }
 
-const MessageHistory: React.FC<MessageList> = ({list = []}) => {
+const MessageHistory: React.FC<MessageList> = ({list}) => {
     return(
         <ul>
-        {list.map((info: Message) => {
-            return info.type === 'message' ? (<MessageComponent from={info.from} message={info}/>) : info.type === 'response' ? (<Responce from={info.from} message={info} />) : (<Typing from={info.from} message={info}/>)
+        {list.map((info) => {
+            return info.type === 'message' ? (<MessageComponent message={info}/>) : info.type === 'response' ? (<Responce message={info} />) : (<Typing message={info}/>)
         })}  
     </ul>)
     
